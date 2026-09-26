@@ -236,11 +236,23 @@ with ProcessPoolExecutor(max_workers=2) as pool:
 Para cada programa, elegir **hilos** o **procesos** y justificar en una línea *(¿espera o calcula?)*.
 
 1. Consultar el precio de 30 productos en 30 APIs distintas.
+R/ Hilos, por que espera respuesta mas que calcula.
+
 2. Contar las palabras palíndromas de 10 libros ya cargados en memoria.
+R/ Procesos, por que calcula las palabras en la RAM
+
 3. Un servidor de chat que atiende 15 clientes conectados.
+R/ Hilos, por que espera los mensajes de los clientes
+
 4. Aplicar un filtro de desenfoque a 200 fotos, píxel por píxel, en Python puro.
+R/ Procesos, por que calcula operaciones matematicas sobre cada pixel
+
 5. Leer 50 archivos de log del disco y copiarlos a otra carpeta.
+R/ Hilos, por que espera la lectura 
+
 6. Simular 1.000.000 de lanzamientos de dados en 8 lotes y promediar.
+R/ Procesos, por que calcula numeros aleatorios 
+
 
 ---
 
@@ -261,11 +273,11 @@ practica-clase/
 
 Marcar antes de dar el taller por terminado:
 
-- [ ] Explico con un ejemplo la diferencia entre concurrencia y paralelismo.
-- [ ] Sé por qué `start()` y `join()` en el mismo bucle vuelven secuencial el programa.
-- [ ] Sé qué hace y qué no hace el GIL.
-- [ ] Creo un hilo por herencia con `super().__init__()` y `run()`, con estado por instancia.
-- [ ] Sé qué se pierde al usar un hilo daemon.
-- [ ] Recupero el resultado y la excepción de un hilo, con herencia y con pool.
-- [ ] Sé por qué los procesos no ven la memoria del padre y por qué necesitan la guarda `if __name__ == "__main__":`.
-- [ ] Elijo entre hilos y procesos preguntando si el programa espera o calcula.
+- [Si] Explico con un ejemplo la diferencia entre concurrencia y paralelismo.
+- [Si] Sé por qué `start()` y `join()` en el mismo bucle vuelven secuencial el programa.
+- [Si] Sé qué hace y qué no hace el GIL.
+- [Si] Creo un hilo por herencia con `super().__init__()` y `run()`, con estado por instancia.
+- [Si] Sé qué se pierde al usar un hilo daemon.
+- [Si] Recupero el resultado y la excepción de un hilo, con herencia y con pool.
+- [Si] Sé por qué los procesos no ven la memoria del padre y por qué necesitan la guarda `if __name__ == "__main__":`.
+- [Si] Elijo entre hilos y procesos preguntando si el programa espera o calcula.
