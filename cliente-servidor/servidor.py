@@ -14,5 +14,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as servidor:
             datos = conexion.recv(1024)
             print("Recibido:", datos)
             conexion.sendall(datos.upper())
-            
-            
