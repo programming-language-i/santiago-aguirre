@@ -1,4 +1,4 @@
-import multiprocessing, time
+import threading, time
 
 
 
@@ -15,18 +15,16 @@ def print_letters():
         time.sleep(1)
         
 
-
+        
 
 if __name__ == "__main__":
-    p1 = multiprocessing.Process(target=print_numbers)
-    p2 = multiprocessing.Process(target=print_letters)
-
-    p1.start()
-    p2.start()
+    h1 = threading.Thread(target=print_numbers)
+    h2 = threading.Thread(target=print_letters)
     
-    p1.join()
-    p2.join()
+    h1.start()
+    h2.start()
     
-    
+    h1.join()
+    h2.join()
 
 

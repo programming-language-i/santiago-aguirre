@@ -7,3 +7,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cliente:
     print("servidor:", cliente.getpeername())
     cliente.sendall("mensaje para el servidor".encode("utf-8"))
     print("respuesta del servidor:", cliente.recv(1024).decode("utf-8"))
+    

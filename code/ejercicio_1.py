@@ -2,6 +2,8 @@ import threading
 import time
 from tabulate import tabulate
 
+
+
 #PRIMER HILO_______________________________________________________
 def imprimir_mensaje1():
     for i in range(5):
