@@ -14,8 +14,8 @@ def recibir_mensaje(conexion):
                 print("\nSe perdio conexion")
                 break
             
-            print(f"\nMensaje: {datos.decode()}")
-            print(">", end="", flush=True)
+            print(f"\n{datos.decode()}")
+            print("> ", end="", flush=True)
 
         except ConnectionResetError:
             print("Conexion terminada")
@@ -29,7 +29,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cliente:
     print("Escribe, mesaje. Usa '0' para salir")
 
     hilo = threading.Thread(target=recibir_mensaje, args=(cliente,), daemon=True)
-
     hilo.start()
 
     while True:
@@ -38,4 +37,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as cliente:
         if mensaje.lower() == "0":
             break
 
-        cliente.sendall(mensaje.encode())
+        # ENVIAR CON NOMBRE
+        mensaje_completo = f"{NOMBRE}: {mensaje}"
+        cliente.sendall(mensaje_completo.encode())

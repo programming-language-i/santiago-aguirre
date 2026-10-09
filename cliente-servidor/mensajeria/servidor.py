@@ -3,8 +3,6 @@ import threading
 
 HOST = "127.0.0.1"
 PORT = 8000
-nombre = "Santiago"
-
 clientes = []
 lock = threading.Lock()
 
@@ -55,7 +53,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as servidor:
     servidor.bind((HOST, PORT))
     servidor.listen()
 
-    print(f"Servidor escuchando en {HOST}:{PORT}, NOMBRE {nombre}")
+    print(f"Servidor escuchando en {HOST}:{PORT}")
 
     while True:
         conexion, direccion = servidor.accept()
